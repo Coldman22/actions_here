@@ -33,6 +33,10 @@ jobs:
             -f body='
             Comment but from API call not action
             '
+          # GitHub CLI api
+          gh api \
+          -H "Accept: application/vnd.github+json" \
+          /repos/OWNER/REPO/issues/ISSUE_NUMBER
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORGANIZATION: ${{ github.event.organization.login }}
